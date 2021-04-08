@@ -1,0 +1,10 @@
+li.nav-item  a.nav-link{
+    color: #fff !important;
+    font-size: 16px;
+    font-family: 'PT Sans', sans-serif !important;
+    margin-right: 1rem;
+}
+
+li.nav-item  a.nav-link.active{
+    border-bottom: 5px solid #fff;
+}
