@@ -22,7 +22,7 @@
                     </div>
 
                     <hr class="my-4">
-                    <h5 class="card-title text-center">Iniciar SesiÃ³n</h5>
+                    <h5 class="card-title text-center">Iniciar Sesión</h5>
 
                     <form class="form-signin">
                         <div class="form-label-group">
@@ -31,8 +31,8 @@
                         </div>
 
                         <div class="form-label-group">
-                            <input type="password" id="inputContraseÃ±a" class="form-control" placeholder="ContraseÃ±a" required>
-                            <label for="inputContraseÃ±a">ContraseÃ±a</label>
+                            <input type="password" id="inputContraseña" class="form-control" placeholder="Contraseña" required>
+                            <label for="inputContraseña">Contraseña</label>
                         </div>
 
                         <div class="text-center">
