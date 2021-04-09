@@ -39,7 +39,7 @@
                             <a class="nav-link active" href="#">Servicios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Clientes</a>
+                           <a class="nav-link" href="clientes.jsp">Clientes</a>
                         </li>
 
                     </ul>

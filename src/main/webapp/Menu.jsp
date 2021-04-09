@@ -38,7 +38,7 @@
                             <a class="nav-link" href="#">Servicios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Clientes</a>
+                            <a class="nav-link" href="clientes.jsp">Clientes</a>
                         </li>
 
                     </ul>
@@ -73,7 +73,7 @@
 
 
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="card card-service">
+                    <a class="card card-service" href="clientes.jsp">
                         <div class="card-body align-items-center d-flex justify-content-center">
                             <div class="text-center">
                                 <i class="fas fa-user-tie fa-5x"></i>
@@ -83,7 +83,7 @@
                         <div class="card-text">
                             <h4 class="card-title d-block">Ver <br> Clientes</h4>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
 
