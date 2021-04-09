@@ -8,12 +8,13 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-        <link href="CSS/menu.css" rel="stylesheet">
 
-        <title>Ban Hammer</title>
+        <title>Bank Hammer</title>
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
+        <link href="./CSS/menu.css" rel="stylesheet">
+
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: #3b5998;">
@@ -52,6 +53,9 @@
 
 
         <div class="container">
+
+            <h5 class="title-page text-center" >Seleccione un servicio</h5>
+
             <div class="row mt-5 ">
                 <div class="col-xs-12 col-sm-6 col-md-4">
                     <div class="card card-service">
@@ -84,7 +88,7 @@
 
 
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="card card-service">
+                    <a class="card card-service" href="nuevaCuenta.jsp">
                         <div class="card-body align-items-center d-flex justify-content-center">
                             <div class="text-center">
                                 <i class="fas fa-file-invoice fa-5x"></i>
@@ -94,7 +98,7 @@
                         <div class="card-text">
                             <h4 class="card-title d-block">Dar de alta una<br> Nueva cuenta</h4>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
             </div>

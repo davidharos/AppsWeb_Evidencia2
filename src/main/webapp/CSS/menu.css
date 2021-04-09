@@ -1,3 +1,6 @@
+body{
+    background:#fff;
+}
 li.nav-item  a.nav-link{
     color: #fff !important;
     font-size: 16px;
@@ -25,6 +28,7 @@ li.nav-item  a.nav-link.active{
     position: relative;
     overflow:hidden;
     border: none;
+    color: #fff;
 }
 
 .card:before{
@@ -39,9 +43,11 @@ li.nav-item  a.nav-link.active{
     transform:rotate(25deg);
     transform-origin: center top 0;
     transition:  .5s;
+    color: #fff;
 }
 
 .card:hover:before{
+    color: #fff;
     left:10%;
 }
 
@@ -58,4 +64,126 @@ li.nav-item  a.nav-link.active{
 
 .card:hover .card-text{
     top:80px;
+}
+
+
+.title-page {
+  margin-top: 20px;
+  font-weight: 300 ;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+a:hover{
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input {
+  height: auto;
+  border-radius: 2rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
+
+.btn-secondary {
+  color: white;
+  background-color: #3b5998;
+}
+
+.form-label-group.col-6>label{
+    left: auto;
+}
+
+@supports (-ms-ime-align: auto) {
+  .form-label-group>label {
+    display: none;
+  }
+  .form-label-group input::-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .form-label-group>label {
+    display: none;
+  }
+  .form-label-group input:-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+.select-perso{
+    border-radius:2rem !important;
+    padding: 10px 24px;
 }
