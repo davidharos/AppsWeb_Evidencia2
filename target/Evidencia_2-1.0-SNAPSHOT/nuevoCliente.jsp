@@ -39,7 +39,7 @@
                             <a class="nav-link " href="#">Servicios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Clientes</a>
+                            <a class="nav-link active" href="clientes.jsp">Clientes</a>
                         </li>
 
                     </ul>
@@ -130,18 +130,28 @@
                             <input type="password" id="inputContraseña" name="inputContraseña" class="form-control" placeholder="Contraseña" required>
                             <label for="inputContraseña">Contraseña</label>
                         </div>
-                        
+
                         <div class="form-label-group">
                             <input type="password" id="inputRepContraseña" name="inputRepContraseña" class="form-control" placeholder="Repetir Contraseña" required>
                             <label for="inputRepContraseña">Repetir Contraseña</label>
                         </div>
 
 
-                        <div class="text-center">
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" style="font-size: 16px">Guardar <i class="fas fa-user-plus"></i></button>
+                        <div class="row">
+                            <div class="col">
+                                <div class="text-center">
+                                    <a href="clientes.jsp" class="btn btn-lg btn-danger btn-block text-uppercase" type="submit" style="font-size: 16px">Cancelar <i class="fas fa-times"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="text-center">
+                                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" style="font-size: 16px">Guardar <i class="fas fa-user-plus"></i></button>
+                                </div>
+                            </div>
                         </div>
 
-                       
+
                     </form>
                 </div>
             </div>
