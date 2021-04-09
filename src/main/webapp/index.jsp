@@ -9,9 +9,9 @@
 
     <link href="CSS/styles.css" rel="stylesheet">
 
-    <title>Ban Hammer</title>
+    <title>Bank Hammer</title>
 </head>
-<body>
+<body class="body-bg">
 <div class="container">
     <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -26,12 +26,12 @@
 
                     <form class="form-signin">
                         <div class="form-label-group">
-                            <input type="text" id="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
+                            <input type="text" id="inputUsuario" name="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
                             <label for="inputUsuario">Usuario</label>
                         </div>
 
                         <div class="form-label-group">
-                            <input type="password" id="inputContraseña" class="form-control" placeholder="Contraseña" required>
+                            <input type="password" id="inputContraseña" name="inputContraseña" class="form-control" placeholder="Contraseña" required>
                             <label for="inputContraseña">Contraseña</label>
                         </div>
 

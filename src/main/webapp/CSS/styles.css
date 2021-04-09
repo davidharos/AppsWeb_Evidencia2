@@ -3,7 +3,7 @@
   --input-padding-y: .75rem;
 }
 
-body {
+.body-bg {
   background: #007bff;
   background: linear-gradient(to right, #0062E6, #33AEFF);
 }
@@ -42,7 +42,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.form-label-group input {
+.form-label-group input{
   height: auto;
   border-radius: 2rem;
 }
@@ -126,4 +126,9 @@ body {
   .form-label-group input:-ms-input-placeholder {
     color: #777;
   }
+}
+
+.select-perso{
+    border-radius:2rem !important;
+    padding: 10px 24px;
 }

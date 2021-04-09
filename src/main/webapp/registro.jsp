@@ -10,9 +10,9 @@
 
         <link href="CSS/styles.css" rel="stylesheet">
 
-        <title>Ban Hammer</title>
+        <title>Bank Hammer</title>
     </head>
-    <body>
+    <body class="body-bg">
         <div class="container">
             <div class="row">
                 <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -27,46 +27,46 @@
                             
                             <form class="form-signin">
                                 <div class="form-label-group">
-                                    <input type="text" id="inputNombre" class="form-control" placeholder="Nombre (s)" required autofocus>
+                                    <input type="text" id="inputNombre" name="inputNombre" class="form-control" placeholder="Nombre (s)" required autofocus>
                                     <label for="inputNombre">Nombre (s)</label>
                                 </div>
 
                                 <div class="form-label-group">
-                                    <input type="email" id="inputEmail" class="form-control" placeholder="Correo Electrónico" required>
+                                    <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Correo Electrónico" required>
                                     <label for="inputEmail">Correo Electrónico</label>
                                 </div>
 
                                 <div class="form-label-group">
-                                    <input type="password" id="inputContraseña" class="form-control" placeholder="Contraseña" required>
+                                    <input type="password" id="inputContraseña" name="inputContraseña" class="form-control" placeholder="Contraseña" required>
                                     <label for="inputContraseña">Contraseña</label>
                                 </div>
 
                                 <div class="row">
                                     <div class="form-label-group col-6">
-                                        <input type="text" id="inputApellidoPaterno" class="form-control" placeholder="Apellido Paterno" required>
+                                        <input type="text" id="inputApellidoPaterno" name="inputApellidoPaterno" class="form-control" placeholder="Apellido Paterno" required>
                                         <label for="inputApellidoPaterno">Apellido Paterno</label>
                                     </div>
 
                                     <div class="form-label-group col-6">
-                                        <input type="text" id="inputApellidoMaterno" class="form-control" placeholder="Apellido Materno" required>
+                                        <input type="text" id="inputApellidoMaterno" name="inputApellidoMaterno" class="form-control" placeholder="Apellido Materno" required>
                                         <label  for="inputApellidoMaterno">Apellido Materno</label>
                                     </div>
                                 </div>
 
                                 <div class="form-label-group">
-                                    <input type="password" id="inputDireccion" class="form-control" placeholder="Dirección" required>
+                                    <input type="password" id="inputDireccion" name="inputDireccion" class="form-control" placeholder="Dirección" required>
                                     <label for="inputDireccion">Dirección</label>
                                 </div>
 
 
                                 <div class="row">
                                     <div class="form-label-group col-6">
-                                        <input type="text" id="inputCP" class="form-control" placeholder="Código Postal" required>
+                                        <input type="text" id="inputCP" name="inputCP" class="form-control" placeholder="Código Postal" required>
                                         <label for="inputCP">Código Postal</label>
                                     </div>
 
                                     <div class="form-label-group col-6">
-                                        <input type="text" id="inputEstado" class="form-control" placeholder="Estado" required>
+                                        <input type="text" id="inputEstado" name="inputEstado" class="form-control" placeholder="Estado" required>
                                         <label  for="inputEstado">Estado</label>
                                     </div>
 
@@ -74,12 +74,12 @@
 
                                 <div class="row">
                                     <div class="form-label-group col-6">
-                                        <input type="text" id="inputPais" class="form-control" placeholder="País" required>
+                                        <input type="text" id="inputPais" name="inputPais" class="form-control" placeholder="País" required>
                                         <label for="inputPais">País</label>
                                     </div>
 
                                     <div class="form-label-group col-6">
-                                        <input type="text" id="inputTelefono" class="form-control" placeholder="Télefono" required>
+                                        <input type="text" id="inputTelefono" name="inputTelefono" class="form-control" placeholder="Télefono" required>
                                         <label  for="inputTelefono">Télefono</label>
                                     </div>
 
@@ -88,7 +88,7 @@
                                 <div>
                                     <label for="inputFechaNac" style="padding-left: 24px" class="col-5 col-form-label">Fecha de Nacimiento</label>
                                     <div class="form-label-group col">
-                                        <input class="form-control" style="padding: 12px 24px" type="date"  id="inputFechaNac">
+                                        <input class="form-control" name="inputFechaNac" style="padding: 12px 24px" type="date"  id="inputFechaNac">
                                     </div>
                                 </div>
 
@@ -99,7 +99,7 @@
 
                                 <hr class="my-4">
                                 <div class="text-center">
-                                    <a class=" text-center btn btn-lg btn-secondary btn-block text-uppercase" href="index.html">Iniciar Sesión</a>
+                                    <a class=" text-center btn btn-lg btn-secondary btn-block text-uppercase" href="index.jsp">Iniciar Sesión</a>
                                 </div>
                             </form>
                         </div>
