@@ -57,7 +57,7 @@
             <h5 class="title-page text-center" >Seleccione un servicio</h5>
 
             <div class="row mt-5 ">
-                <div class="col-xs-12 col-sm-6 col-md-4">
+                <a href="nuevaTransferencia.jsp" class="col-xs-12 col-sm-6 col-md-4">
                     <div class="card card-service">
                         <div class="card-body align-items-center d-flex justify-content-center">
                             <div class="text-center">
@@ -69,7 +69,7 @@
                             <h4 class="card-title d-block">Realizar <br> Transferencia</h4>
                         </div>
                     </div>
-                </div>
+                </a>
 
 
                 <div class="col-xs-12 col-sm-6 col-md-4">
