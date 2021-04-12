@@ -33,7 +33,7 @@ public class Clients {
         setPassword(password);
     }
 
-    //Getters y Setters
+    //Getters and Setters
 
     public int getIdClient() {
         return idClient;
