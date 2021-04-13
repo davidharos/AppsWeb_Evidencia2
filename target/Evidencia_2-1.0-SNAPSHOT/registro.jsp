@@ -21,25 +21,21 @@
                             <div class="text-center mb-3">
                                 <img src="./img/Logo.PNG" class="text-center" style="max-height: 180px; max-width: 180px">  
                             </div>
-                                
+
                             <hr class="my-4">
                             <h5 class="card-title text-center">Registrarse</h5>
-                            
-                            <form class="form-signin">
+
+                            <form class="form-signin" method="POST" action="Auth/register">
                                 <div class="form-label-group">
-                                    <input type="text" id="inputNombre" name="inputNombre" class="form-control" placeholder="Nombre (s)" required autofocus>
+                                    <input type="text" id="inputUsername" name="inputUsername" class="form-control" placeholder="Usuario" required autofocus>
+                                    <label for="inputUsername">Usuario</label>
+                                </div>
+
+                                <div class="form-label-group">
+                                    <input type="text" id="inputNombre" name="inputNombre" class="form-control" placeholder="Nombre (s)" required>
                                     <label for="inputNombre">Nombre (s)</label>
                                 </div>
 
-                                <div class="form-label-group">
-                                    <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Correo Electrónico" required>
-                                    <label for="inputEmail">Correo Electrónico</label>
-                                </div>
-
-                                <div class="form-label-group">
-                                    <input type="password" id="inputContraseña" name="inputContraseña" class="form-control" placeholder="Contraseña" required>
-                                    <label for="inputContraseña">Contraseña</label>
-                                </div>
 
                                 <div class="row">
                                     <div class="form-label-group col-6">
@@ -54,7 +50,18 @@
                                 </div>
 
                                 <div class="form-label-group">
-                                    <input type="password" id="inputDireccion" name="inputDireccion" class="form-control" placeholder="Dirección" required>
+                                    <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Correo Electrónico" required>
+                                    <label for="inputEmail">Correo Electrónico</label>
+                                </div>
+
+                                <div class="form-label-group">
+                                    <input type="password" id="inputContraseña" name="inputPassword" class="form-control" placeholder="Contraseña" required>
+                                    <label for="inputContraseña">Contraseña</label>
+                                </div>
+
+
+                                <div class="form-label-group">
+                                    <input type="text" id="inputDireccion" name="inputDireccion" class="form-control" placeholder="Dirección" required>
                                     <label for="inputDireccion">Dirección</label>
                                 </div>
 
@@ -81,6 +88,13 @@
                                     <div class="form-label-group col-6">
                                         <input type="text" id="inputTelefono" name="inputTelefono" class="form-control" placeholder="Télefono" required>
                                         <label  for="inputTelefono">Télefono</label>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="form-label-group col-6">
+                                        <input type="text" id="inputCiudad" name="inputCiudad" class="form-control" placeholder="Ciudad" required>
+                                        <label for="inputCiudad">Ciudad</label>
                                     </div>
 
                                 </div>

@@ -1,26 +1,37 @@
 package Model;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Clients {
 
+    //DB Connection
+    private Connection DBConnection = new Connection();
+    
     //Variables
     private int idClient = 0;
+    private String username = "";
     private String name = "";
+    private String lastName = "";
     private String address = "";
     private String zipCode = "";
     private String city = "";
     private String state = "";
     private String country = "";
     private String phone = "";
-    private Date birthDate = null;
+    private String birthDate = null;
     private String email = "";
     private String password = "";
 
-    public Clients (int idClient, String name, String address, String zipCode, String city, String state,
-                    String country, String phone, Date birthDate, String email, String password ) {
+    public Clients(int idClient,String username ,String name, String lastName, String address, String zipCode, String city, String state,
+            String country, String phone, String birthDate, String email, String password) {
 
         setIdClient(idClient);
+        setUsername(username);
+        setLastName(lastName);
         setName(name);
         setAddress(address);
         setZipCode(zipCode);
@@ -33,8 +44,26 @@ public class Clients {
         setPassword(password);
     }
 
-    //Getters and Setters
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    
+    
+    
+    //Getters and Setters
     public int getIdClient() {
         return idClient;
     }
@@ -99,11 +128,11 @@ public class Clients {
         this.phone = phone;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
