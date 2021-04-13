@@ -1,3 +1,4 @@
+<%@ page session="true" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="es">
@@ -57,9 +58,9 @@
             <h5 class="title-page text-center" >Dar de alta una nueva cuenta</h5>
             <div class="row">
                 <div class="col-sm-9 col-md-7 col-lg-5 mx-auto mt-3">
-                    <form class="form-signin">
+                    <form class="form-signin" method="POST" action="Account/new">
                         <div class="form-label-group">
-                            <input type="number" name="inputNumCliente" id="inputNumCliente" class="form-control" placeholder="Número de cliente" required>
+                            <input value='<%=session.getAttribute("userId")%>' type="number" disabled="true" name="inputNumCliente" id="inputNumCliente" class="form-control" placeholder="Número de cliente" required>
                             <label for="inputNumCliente">Número de cliente</label>
                         </div>
 
@@ -72,23 +73,18 @@
                             
                             <select name="inputTipoCuenta" class="form-select select-perso" aria-label="Default select example">
                                 <option selected>Tipo de cuenta</option>
-                                <option value="1">Cuenta Corriente</option>
-                                <option value="2">Cuenta con chequera</option>
-                                <option value="3">Cuenta de ahorro</option>
-                                <option value="4">Cuenta de nómina</option>
+                                <option value="Corriente">Cuenta Corriente</option>
+                                <option value="Chequera">Cuenta con chequera</option>
+                                <option value="Ahorro">Cuenta de ahorro</option>
+                                <option value="Nómina">Cuenta de nómina</option>
                             </select>
                         </div>
                         
 
                         <div class="form-label-group">
-                            <input type="number" step="0.01" id="inputMonto" class="form-control" placeholder="Monto" required>
+                            <input type="number" step="0.01" name="inputMonto" id="inputMonto" class="form-control" placeholder="Monto" required>
                             <label for="inputMonto">Monto</label>
                         </div>
-
-
- 
-
-
 
                         <div class="text-center">
                             <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" style="font-size: 16px">Crear <i class="fas fa-piggy-bank"></i></button>

@@ -105,7 +105,7 @@
 
             <div class="row mt-5 ">
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="card card-service">
+                    <a href="Account/accountList" class="card card-service">
                         <div class="card-body align-items-center d-flex justify-content-center">
                             <div class="text-center">
                                 <i class="fas fa-file-invoice-dollar fa-5x"></i>
@@ -115,7 +115,7 @@
                         <div class="card-text">
                             <h4 class="card-title d-block">Resumen de <br> Cuentas</h4>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
 

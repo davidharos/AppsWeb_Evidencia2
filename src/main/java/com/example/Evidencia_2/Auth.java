@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/Auth/*")
 public class Auth extends HttpServlet {
@@ -61,9 +62,11 @@ public class Auth extends HttpServlet {
         String userPassword = (String) request.getParameter("inputContraseña");
         
         Clients client = connection.getUserFromDB(usernameValue);
-       
+        HttpSession session = request.getSession();
         
         if(userPassword.equals(client.getPassword())){
+            request.setAttribute("userId", client.getIdClient());
+            session.setAttribute("userId", client.getIdClient());
             response.sendRedirect(request.getContextPath()+ "/Menu.jsp");
         }else{
             System.out.println("NO SON IGUALES");
@@ -88,11 +91,15 @@ public class Auth extends HttpServlet {
         String birthDate = request.getParameter("inputFechaNac");
         String lastname = apellidoPat + " " + apellidoMat;
         
+        HttpSession session = request.getSession();
         
         Clients newClient = new Clients(0,username, nombre, lastname, address, zipCode, city, state, country, phone, birthDate, email, password);
         
         Clients clientCreated = connection.insertClient(newClient);
+        request.setAttribute("userId", clientCreated.getIdClient());
+        session.setAttribute("userId", clientCreated.getIdClient());
         
+        System.out.println(request.getAttribute("userId"));
         response.sendRedirect(request.getContextPath()+ "/Menu.jsp");
         
         
