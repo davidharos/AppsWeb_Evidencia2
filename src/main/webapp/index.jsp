@@ -24,7 +24,7 @@
                     <hr class="my-4">
                     <h5 class="card-title text-center">Iniciar Sesión</h5>
 
-                    <form class="form-signin">
+                    <form class="form-signin" method="POST" action="Auth/login">
                         <div class="form-label-group">
                             <input type="text" id="inputUsuario" name="inputUsuario" class="form-control" placeholder="Usuario" required autofocus>
                             <label for="inputUsuario">Usuario</label>
