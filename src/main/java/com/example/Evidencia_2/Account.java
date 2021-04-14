@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -64,36 +65,33 @@ public class Account extends HttpServlet {
         HttpSession session = request.getSession();
 
         int idClient = (int) session.getAttribute("userId");
-  
+
         int idAccount = Integer.parseInt(request.getParameter("inputNumCuenta"));
         String accountType = request.getParameter("inputTipoCuenta");
         String ammount = request.getParameter("inputMonto");
         float ammountFloat = (float) Float.parseFloat(ammount);
 
-        
         Accounts newAccount = new Accounts(idClient, idAccount, accountType, ammountFloat, 0);
         Accounts accountCreated = connection.insertAccount(newAccount);
 
-      
         response.sendRedirect(request.getContextPath() + "/Menu.jsp");
     }
-    
-    
-    
-    private void getAllAccounts(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
+
+    private void getAllAccounts(HttpServletRequest request, HttpServletResponse response)
+			throws SQLException, IOException, ServletException {
+        response.setContentType("text/html;charset=UTF-8");
+
         HttpSession session = request.getSession();
         int idClient = (int) session.getAttribute("userId");
-        
+
         List<Accounts> accounts = connection.selectAllAccounts(idClient);
-        
-        for (Accounts temp : accounts) {
-            System.out.println(temp.getIdAccount());
-        }
-        
-        
+
         request.setAttribute("accounts", accounts);
-        response.sendRedirect(request.getContextPath() + "/detalleCuenta.jsp");
-        
+
+        //response.sendRedirect(request.getContextPath() + "/detalleCuenta.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/detalleCuenta.jsp");
+        dispatcher.forward(request, response);
+
     }
 
 }

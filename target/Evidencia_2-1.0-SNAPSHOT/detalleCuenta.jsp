@@ -1,4 +1,6 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="java.util.List"%>
+<%@page import="Model.Accounts"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="es">
@@ -14,16 +16,17 @@
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
-        <link href="./CSS/styles.css" rel="stylesheet">
-        <link href="./CSS/menu.css" rel="stylesheet">
-        <link href="./CSS/clientes.css" rel="stylesheet">
+        <link href="../CSS/styles.css" rel="stylesheet">
+        <link href="../CSS/menu.css" rel="stylesheet">
+        <link href="../CSS/clientes.css" rel="stylesheet">
 
     </head>
     <body>
+        
         <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: #3b5998;">
             <div class="container">
-                <a class="navbar-brand" href="Menu.jsp">
-                    <img src="./img/Logo_Navbar.PNG" alt="Logo" style="max-height: 80px">
+                <a class="navbar-brand" href="<%=request.getContextPath()%>/Menu.jsp">
+                    <img src="../img/Logo_Navbar.PNG" alt="Logo" style="max-height: 80px">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,15 +36,15 @@
                 <div class="collapse navbar-collapse justify-content-between ml-3" id="navbarResponsive">
                     <ul class="nav navbar-nav navbar-right ">
                         <li class="nav-item">
-                            <a class="nav-link " href="Menu.jsp">Inicio
+                            <a class="nav-link " href="<%=request.getContextPath()%>/Menu.jsp">Inicio
 
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="#">Servicios</a>
+                            <a class="nav-link active" href="#">Servicios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="clientes.jsp">Clientes</a>
+                            <a class="nav-link " href="<%=request.getContextPath()%>/clientes.jsp">Clientes</a>
                         </li>
 
                     </ul>
@@ -64,6 +67,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="user-dashboard-info-box table-responsive mb-0 bg-white p-4 shadow-sm">
+                            
                             <table class="table manage-candidates-top mb-0">
                                 <thead>
                                     <tr>
@@ -74,23 +78,23 @@
                                 </thead>
                                 <tbody>
 
-                                    <c:forEach var="account" items="${accounts }">
-
+                                    <c:forEach var="account" items="${accounts}" >
+                                        
                                         <tr class="candidates-list">
                                             <td class="title">
                                                 <div class="thumb">
-                                                    <img class="img-fluid" src="./img/user.png" alt="User image">
+                                                    <img class="img-fluid" src="../img/user.png" alt="User image">
                                                 </div>
                                                 <div class="candidate-list-details">
                                                     <div class="candidate-list-info">
                                                         <div class="candidate-list-title">
-                                                            <h5 class="mb-0">Nombre del usuario</h5>
+                                                            <h5 class="mb-0">Cuenta: <c:out value="${account.getAccountType()}" /></h5>
                                                         </div>
                                                         <div class="candidate-list-option">
                                                             <ul class="list-unstyled">
-                                                                <li><i class="fas fa-hashtag pr-1"></i>Número de cuenta</li>
-                                                                <li><i class="fas fa-wallet pr-1"></i>Tipo de cuenta</li>
-                                                                <li><i class="fas fa-calendar-day pr-1"></i>Fecha</li>
+                                                                <li><i class="fas fa-hashtag pr-1"></i><c:out value="${account.getIdAccount()}" /></li>
+                                                                <li><i class="fas fa-wallet pr-1"></i>$ <c:out value="${account.getBalance()}" /></li>
+                                                                <li><i class="fas fa-user pr-1"></i><c:out value="${account.getFk_idClient()}" /></li>
                                                             </ul>
                                                         </div>
                                                     </div>
