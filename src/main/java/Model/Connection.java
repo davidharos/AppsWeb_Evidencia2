@@ -17,6 +17,7 @@ public class Connection {
     private static final String INSERT_CLIENT = "INSERT INTO USERS(USERNAME,NAME, LASTNAME, PASSWORD, ADDRESS, ZIP_CODE, CITY, STATE, COUNTRY, PHONE, BIRTH_DATE,EMAIL) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
     private static final String INSERT_ACCOUNT = "INSERT INTO ACCOUNTS(idUSERS,CURRENT_BALANCE, ACC_NUMBER, ACC_TYPE, LAST_UPDATE) VALUES(?,?,?,?,NOW())";
     private static final String SELECT_ALL_ACCOUNTS_BY_ID = "SELECT * FROM ACCOUNTS WHERE idUSERS = ?";
+    private static final String SELECT_ALL_TRANSFERABLE_ACC_BY_ID = "SELECT * FROM DB_BANKAPP_DEV.USERS WHERE idUSERS != ?";
 
     public java.sql.Connection RetriveConnection() {
         try {
@@ -162,5 +163,28 @@ public class Connection {
 
         return accounts;
     }
+
+    public List <Transfers> selectAllTransfers(int id){
+        List<Transfers> transfers = new ArrayList<>();
+
+        //Se intenta la conección a SQL
+        try (java.sql.Connection con = RetriveConnection();
+             PreparedStatement preparedState = con.prepareStatement(SELECT_ALL_TRANSFERABLE_ACC_BY_ID);){
+
+            //Se pasa el parámetro al query
+            preparedState.setInt(1, id);
+
+
+
+
+        } catch (SQLException e) {
+            System.out.println("SELECT ACCOUNTS ERROR");
+            e.printStackTrace();
+
+
+        }
+            return transfers;
+    }
+
 
 }
