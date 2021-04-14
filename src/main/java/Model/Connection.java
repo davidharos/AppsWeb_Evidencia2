@@ -17,6 +17,7 @@ public class Connection {
     private static final String INSERT_CLIENT = "INSERT INTO USERS(USERNAME,NAME, LASTNAME, PASSWORD, ADDRESS, ZIP_CODE, CITY, STATE, COUNTRY, PHONE, BIRTH_DATE,EMAIL) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
     private static final String INSERT_ACCOUNT = "INSERT INTO ACCOUNTS(idUSERS,CURRENT_BALANCE, ACC_NUMBER, ACC_TYPE, LAST_UPDATE) VALUES(?,?,?,?,NOW())";
     private static final String SELECT_ALL_ACCOUNTS_BY_ID = "SELECT * FROM ACCOUNTS WHERE idUSERS = ?";
+    private static final String SELECT_ALL_USERS = "SELECT * FROM USERS";
 
     public java.sql.Connection RetriveConnection() {
         try {
@@ -162,5 +163,44 @@ public class Connection {
 
         return accounts;
     }
+    
+    public List<Clients> selectAllClients(){
+        List<Clients> clients = new ArrayList<>();
+        
+                try (java.sql.Connection con = RetriveConnection();
+                PreparedStatement preparedState = con.prepareStatement(SELECT_ALL_USERS);) {
+
+            System.out.println(preparedState);
+
+            ResultSet result = preparedState.executeQuery();
+            while (result.next()) {
+                
+                int Id = Integer.parseInt(result.getString("IdUSERS"));
+                String name = result.getString("NAME");
+                String username = result.getString("USERNAME");
+                String lastname = result.getString("LASTNAME");
+                String address = result.getString("ADDRESS");
+                String zipCode = result.getString("ZIP_CODE");
+                String city = result.getString("CITY");
+                String state = result.getString("STATE");
+                String country = result.getString("COUNTRY");
+                String phone = result.getString("PHONE");
+                String birthDate = result.getString("BIRTH_DATE");
+                String email = result.getString("EMAIL");
+                String password = result.getString("PASSWORD");
+                
+                clients.add(new Clients(Id, username, name, lastname, address, zipCode, city, state, country, phone, birthDate, email, password));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("SELECT USERS ERROR");
+            e.printStackTrace();
+        }
+        
+        return clients;
+    }
+    
+    
+    
 
 }

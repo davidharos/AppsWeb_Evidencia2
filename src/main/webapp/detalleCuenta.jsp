@@ -18,7 +18,7 @@
         <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap" rel="stylesheet">
         <link href="../CSS/styles.css" rel="stylesheet">
         <link href="../CSS/menu.css" rel="stylesheet">
-        <link href="../CSS/clientes.css" rel="stylesheet">
+        <link href="../CSS/accounts.css" rel="stylesheet">
 
     </head>
     <body>
