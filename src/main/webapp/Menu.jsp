@@ -73,7 +73,7 @@
 
 
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <a class="card card-service" href="clientes.jsp">
+                    <a class="card card-service" href="Client/clientList">
                         <div class="card-body align-items-center d-flex justify-content-center">
                             <div class="text-center">
                                 <i class="fas fa-user-tie fa-5x"></i>
