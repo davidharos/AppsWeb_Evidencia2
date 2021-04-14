@@ -18,7 +18,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: #3b5998;">
-            <div class="container">
+            <div class="container " >
                 <a class="navbar-brand" href="Menu.jsp">
                     <img src="./img/Logo_Navbar.PNG" alt="Logo" style="max-height: 80px">
                 </a>
@@ -52,7 +52,7 @@
         </nav>
 
 
-        <div class="container">
+        <div class="container" style="height:95vh">
 
             <h5 class="title-page text-center" >Seleccione un servicio</h5>
 
