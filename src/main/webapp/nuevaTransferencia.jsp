@@ -74,19 +74,12 @@
                             </select>
                         </div>
 
-                        <div class="form-label-group">
 
-                            <select name="inputDestino" class="form-select select-perso" aria-label="Default select example">
-                                <option selected>Cuenta destino</option>
-                                <option value="1">Cliente 1</option>
-                                <option value="2">Cliente 2</option>
-                                <option value="3">Cliente 3</option>
-                                <option value="4">Cliente 4</option>
-                            </select>
+                        <div class="form-label-group">
+                            <input type="text" step="0.01" id="inputRemitente" class="form-control" placeholder="Remitente" required>
+                            <label for="inputRemitente">Remitente</label>
                         </div>
 
-
-                    </div>
 
 
                 </div>

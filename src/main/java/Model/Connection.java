@@ -18,7 +18,7 @@ public class Connection {
     private static final String INSERT_ACCOUNT = "INSERT INTO ACCOUNTS(idUSERS,CURRENT_BALANCE, ACC_NUMBER, ACC_TYPE, LAST_UPDATE) VALUES(?,?,?,?,NOW())";
     private static final String SELECT_ALL_ACCOUNTS_BY_ID = "SELECT * FROM ACCOUNTS WHERE idUSERS = ?";
     private static final String SELECT_ALL_USERS = "SELECT * FROM USERS";
-    private static final String SELECT_ALL_TRANSFERABLE_ACC_BY_ID = "SELECT * FROM DB_BANKAPP_DEV.USERS WHERE idUSERS != ?";
+    private static final String SELECT_ALL_TRANSFERABLE_ACC_BY_ID = "SELECT * FROM ACCOUNTS WHERE idUSERS != ?";
 
     public java.sql.Connection RetriveConnection() {
         try {
@@ -200,31 +200,35 @@ public class Connection {
         
         return clients;
     }
-    
-    
-    
 
-    public List <Transfers> selectAllTransfers(int id){
-        List<Transfers> transfers = new ArrayList<>();
+    //Método para traer todas las cuentas
+    public List<Accounts> selectAllTrasferableAccounts(int id) {
+        List<Accounts> accounts = new ArrayList<>();
 
-        //Se intenta la conección a SQL
         try (java.sql.Connection con = RetriveConnection();
-             PreparedStatement preparedState = con.prepareStatement(SELECT_ALL_TRANSFERABLE_ACC_BY_ID);){
+             PreparedStatement preparedState = con.prepareStatement(SELECT_ALL_TRANSFERABLE_ACC_BY_ID);) {
 
-            //Se pasa el parámetro al query
             preparedState.setInt(1, id);
+            System.out.println(preparedState);
 
+            ResultSet result = preparedState.executeQuery();
+            while (result.next()) {
 
+                int idUsers = result.getInt("idUSERS");
+                float balance = result.getFloat("CURRENT_BALANCE");
+                int accountNumber = result.getInt("ACC_NUMBER");
+                String accountType = result.getString("ACC_TYPE");
+                int idPrimary = result.getInt("idACCOUNTS");
 
+                accounts.add(new Accounts(idUsers,accountNumber, accountType,balance,idPrimary));
+            }
 
         } catch (SQLException e) {
             System.out.println("SELECT ACCOUNTS ERROR");
             e.printStackTrace();
-
-
         }
-            return transfers;
-    }
 
+        return accounts;
+    }
 
 }
